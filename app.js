@@ -3,6 +3,9 @@ const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
 const verifyToken = require('./API/middlewares/checkAuth');
+require('dotenv').config()
+
+const { PORT } = process.env;
 
 app.use(morgan("dev"))
 app.use(cors({ origin: "*", }))
@@ -67,6 +70,14 @@ app.use((error, req, res, next) => {
             message: error.message
         }
     })
+})
+
+
+
+
+
+app.listen(PORT, () => {
+    console.log(`Listening to Port ${PORT}`)
 })
 
 
