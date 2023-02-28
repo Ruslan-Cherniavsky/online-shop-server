@@ -7,6 +7,7 @@ require('dotenv').config()
 
 const { PORT } = process.env;
 
+
 app.use(morgan("dev"))
 app.use(cors({ origin: "*", }))
 const bodyParser = require('body-parser');
@@ -32,7 +33,7 @@ const usersRoutes = require('./API/routes/users');
 const statisticsRouts = require('./API/routes/statistics')
 
 
-//app.use('/uploads', express.static('uploads'))
+//app.use('/uploads', express.static('uploads') )
 app.use('/users', usersRoutes)
 app.use('/statistics', statisticsRouts)
 
@@ -80,5 +81,3 @@ app.listen(PORT, () => {
     console.log(`Listening to Port ${PORT}`)
 })
 
-
-module.exports = app;
