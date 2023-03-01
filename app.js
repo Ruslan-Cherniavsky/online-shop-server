@@ -5,7 +5,7 @@ const cors = require('cors');
 const verifyToken = require('./API/middlewares/checkAuth');
 require('dotenv').config()
 
-const { PORT } = process.env;
+// const { PORT } = process.env;
 
 
 app.use(morgan("dev"))
@@ -74,7 +74,7 @@ app.use((error, req, res, next) => {
 })
 
 
-
+const PORT = 3000
 
 
 app.listen(PORT, () => {
