@@ -16,7 +16,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@ruslan-test.odepovq.mongodb.net/node-angular?retryWrites=true&w=majority`)
     .then(() => { console.log('Conected to data base Woohoo!'); })
-    .catch(() => { console.log('Conection failed! T___T'); });
+    .catch((err) => { console.log('Conection failed! T___T'), err; });
 
 const getCountOfAllProducts = require('./API/routes/products')
 const checkUserAutchData = require('./API/middlewares/checkUserAuthData')
