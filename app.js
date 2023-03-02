@@ -19,7 +19,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONG
     .catch(() => { console.log('Conection failed! T___T'); });
 
 const getCountOfAllProducts = require('./API/routes/products')
-const checkUserAutchData = require('../.SERVER/API/middlewares/checkUserAuthData')
+const checkUserAutchData = require('./API/middlewares/checkUserAuthData')
 
 const articlesRoutes = require('./API/routes/articles');
 
